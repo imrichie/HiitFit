@@ -23,9 +23,6 @@ struct VideoPlayerView: View {
     }
 }
 
-// Adding a comment here for git purposes
-
-
 #Preview {
     VideoPlayerView(exerciseName: "squat")
 }
