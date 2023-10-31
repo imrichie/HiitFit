@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct HistoryView: View {
+    // Constants
+    private static let secondsInDay: TimeInterval = 86400
+    
+    // Dates
+    let today = Date()
+    let yesterday = Date().addingTimeInterval(-HistoryView.secondsInDay)
+    
+    // Exercises
+    let exercises1 = ["Squat", "Step Up", "Burpee", "Sun Salute"]
+    let exercises2 = ["Squat", "Step Up", "Burpee"]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("History")
+                .font(.title)
+                .padding()
+        }
     }
 }
 
