@@ -14,11 +14,12 @@ struct ExerciseDay: Identifiable {
 }
 
 struct HistoryStore {
+    var exerciseDays: [ExerciseDay] = []
+    
+    // Initializer
     init() {
         #if DEBUG
         createDevData()
         #endif
     }
-    
-    var exerciseDays: [ExerciseDay] = []
 }
