@@ -18,6 +18,7 @@
 		1389299E2AF097E60074C76A /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1389299D2AF097E60074C76A /* HistoryView.swift */; };
 		138E14E42AF1CB5700D8F3FF /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138E14E32AF1CB5700D8F3FF /* DateExtension.swift */; };
 		138E14E72AF1D73D00D8F3FF /* HistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138E14E62AF1D73D00D8F3FF /* HistoryStore.swift */; };
+		138E14EA2AF2CED600D8F3FF /* HistoryStoreDevData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138E14E92AF2CED600D8F3FF /* HistoryStoreDevData.swift */; };
 		13EFAB102AE346E500CD4262 /* HiitFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EFAB0F2AE346E500CD4262 /* HiitFitApp.swift */; };
 		13EFAB122AE346E500CD4262 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EFAB112AE346E500CD4262 /* ContentView.swift */; };
 		13EFAB142AE346E600CD4262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13EFAB132AE346E600CD4262 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		1389299D2AF097E60074C76A /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		138E14E32AF1CB5700D8F3FF /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		138E14E62AF1D73D00D8F3FF /* HistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStore.swift; sourceTree = "<group>"; };
+		138E14E92AF2CED600D8F3FF /* HistoryStoreDevData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryStoreDevData.swift; path = HiitFit/Model/HistoryStoreDevData.swift; sourceTree = SOURCE_ROOT; };
 		13EFAB0C2AE346E500CD4262 /* HiitFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiitFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13EFAB0F2AE346E500CD4262 /* HiitFitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiitFitApp.swift; sourceTree = "<group>"; };
 		13EFAB112AE346E500CD4262 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,8 +82,8 @@
 		138E14E82AF1D74F00D8F3FF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				138E14E62AF1D73D00D8F3FF /* HistoryStore.swift */,
 				131D305E2AEAD68B001D7220 /* Exercise.swift */,
+				138E14E62AF1D73D00D8F3FF /* HistoryStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,6 +121,7 @@
 		13EFAB152AE346E600CD4262 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				138E14E92AF2CED600D8F3FF /* HistoryStoreDevData.swift */,
 				13EFAB162AE346E600CD4262 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				138E14EA2AF2CED600D8F3FF /* HistoryStoreDevData.swift in Sources */,
 				131D30612AEC4D5D001D7220 /* RatingView.swift in Sources */,
 				138E14E42AF1CB5700D8F3FF /* DateExtension.swift in Sources */,
 				131D305D2AEAD2D0001D7220 /* HeaderView.swift in Sources */,
