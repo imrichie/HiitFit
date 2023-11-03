@@ -19,8 +19,7 @@ struct SuccessView: View {
                     .foregroundColor(.purple)
                     .rotationEffect(.degrees(rotationAmount))
                     .onAppear() {
-                        withAnimation(
-                            Animation.easeInOut(duration: 0.5).repeatForever(autoreverses: true)) {
+                        withAnimation(Animation.easeInOut(duration: 0.5).repeatForever(autoreverses: true)) {
                             rotationAmount = 20
                         }
                     }

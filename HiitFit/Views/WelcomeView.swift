@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    @Binding var selectedTab: Int
+    
     var body: some View {
         ZStack {
             // bottom or 1st layer
@@ -34,7 +36,7 @@ struct WelcomeView: View {
                         .clipShape(Circle())
                 }
                 Button(action: {
-                    print("Get Started button pressed")
+                    selectedTab = 0
                 }, label: {
                     Text("Get Started")
                     Image(systemName: "arrow.right.circle")
@@ -48,5 +50,5 @@ struct WelcomeView: View {
 }
 
 #Preview {
-    WelcomeView()
+    WelcomeView(selectedTab: .constant(9))
 }
