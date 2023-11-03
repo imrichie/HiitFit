@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HistoryView: View {
+    @Binding var showHistory: Bool
     
     // Create an instance of the HistoryStore to fetch and store exercise data
     let history: HistoryStore = HistoryStore()
@@ -15,11 +16,11 @@ struct HistoryView: View {
     var body: some View {
         ZStack(alignment: .topTrailing) {
             
-            Button(action: {}, label: {
+            Button(action: { showHistory.toggle() }, label: {
                 Image(systemName: "xmark.circle")
             })
             .font(.title)
-            .padding(.trailing)
+            .padding()
             
             VStack {
                 Text("History")
@@ -45,5 +46,5 @@ struct HistoryView: View {
 }
 
 #Preview {
-    HistoryView()
+    HistoryView(showHistory: .constant(true))
 }

@@ -10,6 +10,10 @@ import AVKit
 
 struct ExerciseView: View {
     // observed properties
+    @State private var rating: Int = 0
+    @State private var showHistory: Bool = false
+    @State private var showSuccess: Bool = false
+
     @Binding var selectedTab: Int
     
     // instance properties
@@ -33,14 +37,18 @@ struct ExerciseView: View {
     
     var doneButton: some View {
         Button("Done") {
-            selectedTab = lastExercise ? 9 : selectedTab + 1
+            if lastExercise {
+                showSuccess.toggle()
+            } else {
+                selectedTab += 1
+            }
         }
     }
     
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                HeaderView(titleText: exercise.exerciseName)
+                HeaderView(selectedTab: $selectedTab, titleText: exercise.exerciseName)
                     .padding()
                 
                 VideoPlayerView(exerciseName: exercise.videoName)
@@ -55,18 +63,23 @@ struct ExerciseView: View {
                 HStack(spacing: 100) {
                     startButton
                     doneButton
+                        .sheet(isPresented: $showSuccess, content: {
+                            SuccessView()
+                        })
                 }
                 .font(.title3)
                 .padding()
                 
-                RatingView()
+                RatingView(rating: $rating)
                     .padding()
                 
                 Spacer()
                 Button("History") {
-                    print("History Button Pressed")
+                    showHistory.toggle()
                 }
-                .padding(.bottom)
+                .sheet(isPresented: $showHistory, content: {
+                    HistoryView(showHistory: $showHistory)
+                })
             }
         }
     }
