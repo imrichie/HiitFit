@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SuccessView: View {
     @State private var rotationAmount: Double = -20
+    @Binding var selectedTab: Int
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ZStack {
@@ -42,7 +44,8 @@ struct SuccessView: View {
             VStack {
                 Spacer()
                 Button("Continue") {
-                    print("Continue Button Pressed")
+                    selectedTab = 9
+                    dismiss()
                 }
                 .padding(.bottom)
             }
@@ -51,5 +54,5 @@ struct SuccessView: View {
 }
 
 #Preview {
-    SuccessView()
+    SuccessView(selectedTab: .constant(3))
 }

@@ -30,7 +30,7 @@ struct ExerciseView: View {
     }
     
     var startButton: some View {
-        Button("Start Exercise") {
+        Button("Start") {
             print("Start button pressed")
         }
     }
@@ -60,11 +60,12 @@ struct ExerciseView: View {
                     .font(.system(size: geometry.size.height * 0.07))
                     .padding()
                 
-                HStack(spacing: 100) {
+                HStack(spacing: 150) {
                     startButton
                     doneButton
                         .sheet(isPresented: $showSuccess, content: {
-                            SuccessView()
+                            SuccessView(selectedTab: $selectedTab)
+                                .presentationDetents([.medium, .large])
                         })
                 }
                 .font(.title3)
@@ -86,5 +87,5 @@ struct ExerciseView: View {
 }
 
 #Preview {
-    ExerciseView(selectedTab: .constant(1), index: 0)
+    ExerciseView(selectedTab: .constant(3), index: 3)
 }
