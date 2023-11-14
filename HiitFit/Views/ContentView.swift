@@ -22,6 +22,7 @@ struct ContentView: View {
                     .tag(index)
             }
         }
+        .environmentObject(HistoryStore())
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     }
 }

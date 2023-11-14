@@ -9,9 +9,7 @@ import SwiftUI
 
 struct HistoryView: View {
     @Binding var showHistory: Bool
-    
-    // Create an instance of the HistoryStore to fetch and store exercise data
-    let history: HistoryStore = HistoryStore()
+    @EnvironmentObject var history: HistoryStore
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -47,4 +45,5 @@ struct HistoryView: View {
 
 #Preview {
     HistoryView(showHistory: .constant(true))
+        .environmentObject(HistoryStore())
 }

@@ -10,7 +10,7 @@ import Foundation
 extension HistoryStore {
     // dummy data
     
-    mutating func createDevData() {
+    func createDevData() {
         let yesterday: Date = Date().addingTimeInterval(-86400)
         let twoDaysAgo: Date = Date().addingTimeInterval(-86400 * 2)
         
