@@ -51,7 +51,7 @@ struct ExerciseView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            VStack {
+            VStack(spacing: 0) {
                 HeaderView(selectedTab: $selectedTab, titleText: exercise.exerciseName)
                     .padding()
                 
@@ -59,27 +59,27 @@ struct ExerciseView: View {
                     .padding()
                     .frame(width: geometry.size.width, height: geometry.size.height * 0.45)
                 
-                // timer
-                if showTimer {
-                    TimerView(timerDone: $timerDone, size: geometry.size.height * 0.07)
-                }
-                
                 HStack(spacing: 150) {
                     startButton
                     doneButton
                         .disabled(!timerDone)
-                        .sheet(isPresented: $showSuccess, content: {
+                        .sheet(isPresented: $showSuccess) {
                             SuccessView(selectedTab: $selectedTab)
                                 .presentationDetents([.medium, .large])
-                        })
+                        }
                 }
                 .font(.title3)
                 .padding()
                 
+                if showTimer {
+                    TimerView(timerDone: $timerDone, size: geometry.size.height * 0.07)
+                }
+                
+                Spacer()
+                
                 RatingView(rating: $rating)
                     .padding()
                 
-                Spacer()
                 Button("History") {
                     showHistory.toggle()
                 }
