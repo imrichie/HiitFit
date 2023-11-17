@@ -7,6 +7,12 @@
 
 import Foundation
 
+// enums for errors
+enum FileError: Error {
+    case loadFailure
+    case saveFailure
+}
+
 struct ExerciseDay: Identifiable {
     let id = UUID()
     let date: Date
@@ -15,13 +21,19 @@ struct ExerciseDay: Identifiable {
 
 class HistoryStore: ObservableObject {
     @Published var exerciseDays: [ExerciseDay] = []
+    @Published var loadingError: Bool = false
+    
+    var dataURL: URL {
+        URL.documentsDirectory.appendingPathComponent("history.plist")
+    }
     
     // Initializer
     init() {
-        #if DEBUG
-        // createDevData()
-        #endif
-        print("Initializing HistoryStore")
+        do {
+            try load()
+        } catch {
+            loadingError = true 
+        }
     }
     
     func addDoneExercise(_ exerciseName: String) {
@@ -32,6 +44,32 @@ class HistoryStore: ObservableObject {
         } else {
             exerciseDays.insert(ExerciseDay(date: today, exercises: [exerciseName]), at: 0)
         }
-        print("History: ", exerciseDays)
+        
+        do {
+            try save()
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+    }
+    
+    func save() throws {
+        let plistData: [[Any]] = exerciseDays.map { exerciseDays in
+            [
+                exerciseDays.id.uuidString,
+                exerciseDays.date,
+                exerciseDays.exercises
+            ]
+        }
+        
+        do {
+            let data = try PropertyListSerialization.data(fromPropertyList: plistData, format: .binary, options: .zero)
+            try data.write(to: dataURL, options: .atomic)
+        } catch {
+            throw FileError.saveFailure
+        }
+    }
+    
+    func load() throws {
+        throw FileError.loadFailure
     }
 }
