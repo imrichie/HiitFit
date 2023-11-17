@@ -9,9 +9,6 @@ import SwiftUI
 import AVKit
 
 struct ExerciseView: View {
-    // UserDefaults Properties
-    @AppStorage("rating") private var rating: Int = 0
-    
     // observed properties
     @State private var showHistory: Bool = false
     @State private var showSuccess: Bool = false
@@ -83,7 +80,7 @@ struct ExerciseView: View {
                 
                 Spacer()
                 
-                RatingView(rating: $rating)
+                RatingView(exerciseIndex: index)
                     .padding()
                 
                 Button("History") {
