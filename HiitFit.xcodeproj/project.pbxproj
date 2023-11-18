@@ -28,6 +28,7 @@
 		13EFAB172AE346E600CD4262 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13EFAB162AE346E600CD4262 /* Preview Assets.xcassets */; };
 		13EFAB1E2AE99B1C00CD4262 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EFAB1D2AE99B1C00CD4262 /* WelcomeView.swift */; };
 		13EFAB202AE99B2500CD4262 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EFAB1F2AE99B2500CD4262 /* ExerciseView.swift */; };
+		13F0BA292B0843C700FA0B71 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 13F0BA282B0843C700FA0B71 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		13EFAB162AE346E600CD4262 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		13EFAB1D2AE99B1C00CD4262 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		13EFAB1F2AE99B2500CD4262 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
+		13F0BA282B0843C700FA0B71 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = HiitFit/README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		13EFAB0E2AE346E500CD4262 /* HiitFit */ = {
 			isa = PBXGroup;
 			children = (
+				13F0BA282B0843C700FA0B71 /* README.md */,
 				13EFAB0F2AE346E500CD4262 /* HiitFitApp.swift */,
 				138E14E82AF1D74F00D8F3FF /* Model */,
 				13EFAB212AE99B2C00CD4262 /* Views */,
@@ -211,6 +214,7 @@
 				131D305A2AEA13E3001D7220 /* squat.mp4 in Resources */,
 				131D30592AEA13E3001D7220 /* burpee.mp4 in Resources */,
 				131D305B2AEA13E3001D7220 /* step-up.mp4 in Resources */,
+				13F0BA292B0843C700FA0B71 /* README.md in Resources */,
 				13EFAB172AE346E600CD4262 /* Preview Assets.xcassets in Resources */,
 				131D30582AEA13E3001D7220 /* sun-salute.mp4 in Resources */,
 				13EFAB142AE346E600CD4262 /* Assets.xcassets in Resources */,
