@@ -70,6 +70,20 @@ class HistoryStore: ObservableObject {
     }
     
     func load() throws {
-        throw FileError.loadFailure
+        // try to get contents for the URL otherwise move one
+        guard let data = try? Data(contentsOf: dataURL) else {
+            return
+        }
+        
+        do {
+            let plistData = try PropertyListSerialization.propertyList(from: data, options: [], format: nil)
+            let convertedPlistData = plistData as? [[Any]] ?? []
+            
+            exerciseDays = convertedPlistData.map { exerciseDay in
+                ExerciseDay(date: exerciseDay[1] as? Date ?? Date(), exercises: exerciseDay[2] as? [String] ?? [])
+            }
+        } catch {
+            throw FileError.loadFailure
+        }
     }
 }
